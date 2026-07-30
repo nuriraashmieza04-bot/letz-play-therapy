@@ -1,0 +1,32 @@
+{
+  "name": "lpt-connect-server",
+  "version": "1.0.0",
+  "description": "LPT Connect — production backend (Express + PostgreSQL) for the pediatric therapy clinical documentation platform.",
+  "type": "commonjs",
+  "main": "src/index.js",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "start": "node src/index.js",
+    "start:prod": "node scripts/migrate.js && node src/index.js",
+    "dev": "node --watch src/index.js",
+    "migrate": "node scripts/migrate.js",
+    "seed": "node scripts/seed.js",
+    "backup": "node scripts/backup.js",
+    "check": "node -e \"require('./src/app.js'); console.log('app loads OK')\""
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "compression": "^1.7.4",
+    "connect-pg-simple": "^9.0.1",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "express-rate-limit": "^7.4.0",
+    "express-session": "^1.18.0",
+    "helmet": "^7.1.0",
+    "node-cron": "^3.0.3",
+    "pdfkit": "^0.15.0",
+    "pg": "^8.12.0"
+  }
+}
